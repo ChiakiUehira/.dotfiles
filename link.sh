@@ -8,7 +8,7 @@ ln -sf ~/.dotfiles/.gitconfig    ~/.gitconfig
 ln -sf ~/.dotfiles/.gitignore    ~/.gitignore
 
 
-source ~/.dotfiles/.bash_profile
-source ~/.dotfiles/.bashrc
+source ~/.bash_profile
+source ~/.bashrc
 
 echo link!
