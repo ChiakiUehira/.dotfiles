@@ -1,0 +1,10 @@
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+[user]
+	name = in-the-box
+	email = chiaki.jpg@gmail.com
+[core]
+	excludesfile = ~/.gitignore
