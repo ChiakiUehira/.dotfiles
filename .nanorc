@@ -1,1 +1,6 @@
 set nowrap
+set historylog
+set multibuffer
+set smooth
+set suspend
+set tabsize 4
