@@ -3,6 +3,10 @@
 alias safari='open -a safari'
 alias atom='open -a atom'
 alias chrome='open -a Google\ Chrome'
+
+#short
+
+alias stat='stat -x'
 alias la='ls -a'
 
 
