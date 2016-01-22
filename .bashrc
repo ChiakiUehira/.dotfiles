@@ -8,7 +8,7 @@ alias chrome='open -a Google\ Chrome'
 
 alias stat='stat -x'
 alias la='ls -a'
-
+alias ll='ls -l'
 
 #dir
 
