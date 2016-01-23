@@ -19,4 +19,3 @@ alias dropbox='~/Dropbox'
 
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
-export PATH=$PATH:~/shellscript
