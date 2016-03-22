@@ -1,7 +1,7 @@
 .settings-view {
     .packages {
         .search-container {
-            margin-bottom: 3rem;
+            margin-bottom: 0;
 
             .btn-group {
                 margin: 0.25rem 0 0.25rem 1rem;
@@ -15,12 +15,19 @@
                 }
             }
         }
+        .error-message {
+            padding: 0;
+        }
+        .search-message, .featured-message {
+            margin: 2rem 0 0;
+        }
     }
     .package-card, .package-detail-view .package-card, .package-detail .package-card {
         padding: 1rem;
         border: none;
         border-radius: 0.125rem;
         background: lighten(@app-background-color, 5%);
+        margin: 1rem 0;
         .z-depth-1;
 
         &:hover {
@@ -89,6 +96,22 @@
             background-color: @app-background-color;
             opacity: 0.75;
         }
+        .meta-controls {
+            .install-button, .uninstall-button {
+                &.is-installing, &.is-uninstalling {
+                    background-image: none;
+                    -webkit-animation: none;
+
+                    &::before {
+                        -webkit-animation: spin 1s linear infinite;
+                        content: '\f087';
+                    }
+                }
+            }
+        }
+    }
+    .row:last-child:not(:only-child) .package-card {
+        margin-bottom: 0;
     }
     .package-detail-view, .package-detail {
         .table {
@@ -134,5 +157,13 @@
     }
     .alert + .package-container {
         margin-top: 3rem;
+    }
+}
+@-webkit-keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
     }
 }

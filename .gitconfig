@@ -4,7 +4,13 @@
 	br = branch
 	ci = commit
 [user]
-	name = in-the-box
-	email = chiaki.jpg@gmail.com
+	name = 
+	email = 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/haco/.gitignore
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

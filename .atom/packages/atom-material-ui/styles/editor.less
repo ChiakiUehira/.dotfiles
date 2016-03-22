@@ -1,10 +1,12 @@
+@import "ui-variables";
+
 atom-text-editor[mini], atom-text-editor[mini]::shadow {
     position: relative;
     color: @text-color;
     background-color: transparent;
     border: none;
     border-radius: 0;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0.75rem 0;
     max-height: none;
@@ -25,6 +27,18 @@ atom-text-editor[mini], atom-text-editor[mini]::shadow {
     }
     .placeholder-text {
         color: fade(@text-color, 50%);
+    }
+}
+atom-text-editor, atom-text-editor::shadow {
+    text-rendering: optimizeLegibility;
+
+    .find-result {
+        .region {
+            background: fade(@text-color, 15%);
+            border-color: fade(@base-color, 35%);
+            border-radius: 0.125rem;
+            border-width: 0.125rem;
+        }
     }
 }
 atom-text-editor[mini].is-focused, atom-text-editor[mini].is-focused::shadow {

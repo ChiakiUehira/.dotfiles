@@ -1,5 +1,7 @@
+@import "ui-variables";
+
 .list-tree, .list-group {
-    li:not(.list-nested-item), li.list-nested-item > .list-item {
+    li:not(.list-nested-item):not(.tabBlender), li.list-nested-item > .list-item {
         line-height: 3.25em;
 
         &.selected {
@@ -9,16 +11,16 @@
                 .selected-item();
             }
         }
-        &.status-modified:not(.selected) {
-            color: @md-amber;
+        &.status-modified {
+            color: desaturate(@md-amber, 15%);
         }
-        &.status-added:not(.selected) {
+        &.status-added {
             color: @md-light-green;
         }
-        &.status-renamed:not(.selected) {
+        &.status-renamed {
             color: @md-blue;
         }
-        &.status-removed:not(.selected) {
+        &.status-removed {
             color: @md-red;
         }
         .name {
@@ -26,7 +28,36 @@
             z-index: 10;
         }
     }
+    li.list-nested-item {
+        &.status-modified:not(.selected) > .list-item {
+            color: lighten(desaturate(@md-amber, 25%), 5%);
+        }
+        &.status-added:not(.selected) > .list-item {
+            color: @md-light-green;
+        }
+        &.status-renamed:not(.selected) > .list-item {
+            color: @md-blue;
+        }
+        &.status-removed:not(.selected) > .list-item {
+            color: @md-red;
+        }
+    }
     .selected::before {
         background: none;
+    }
+}
+.select-list, .popover-list {
+    atom-text-editor[mini], atom-text-editor[mini]::shadow {
+        height: auto;
+    }
+    .styleguide & {
+        atom-text-editor[mini], atom-text-editor[mini]::shadow {
+            height: auto;
+        }
+    }
+    .list-group {
+        li {
+            padding: 0 0.75rem;
+        }
     }
 }

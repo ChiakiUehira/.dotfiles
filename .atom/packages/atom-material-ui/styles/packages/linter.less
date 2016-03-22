@@ -1,5 +1,10 @@
 linter-panel {
-    box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    .panel-contrast & {
+        background-color: darken(@app-background-color, 2.5%);
+    }
+    .panel-shadows & {
+        box-shadow: 0 -0.125rem 0.125rem rgba(0, 0, 0, 0.1);
+    }
 }
 linter-bottom-container {
     margin-right: 1rem;
@@ -19,10 +24,11 @@ linter-bottom-tab {
     }
     &:nth-last-child(2) {
         border-radius: 0 0.125rem 0.125rem;
+        margin-right: 0.5rem;
     }
 }
 .linter-highlight {
-    margin-left: 1rem;
+    margin-left: 0.25rem;
 
     &.status-success {
         color: @md-green;
@@ -30,17 +36,21 @@ linter-bottom-tab {
     &.status-error {
         color: @md-red;
     }
+    &:first-child {
+        margin-left: 0;
+    }
 }
 linter-message {
+    background-color: transparent;
     line-height: 2rem;
     display: block;
-    padding: 0.5rem;
+    padding-left: 0.25rem;
 
     + linter-message {
         border-top: 1px solid fade(@text-color, 5%);
     }
     span:last-child {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
     }
     .linter-message-link {
         margin-left: 0.5rem;
@@ -50,46 +60,23 @@ linter-message {
         }
     }
 }
-.badge {
-    background: @text-color;
-    color: @app-background-color;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.25rem;
-    line-height: 1.5rem;
-    position: relative;
-    top: -0.125rem;
-
-    &.badge-flexible {
-        padding: 0 0.5rem;
-    }
-    &:not(.line-number) {
-        &.warning {
-            background-color: @md-amber;
-            color: darken(@md-amber, 30%);
-        }
-        &.error {
-            background: @md-red;
-            color: #FFF;
-        }
-    }
-}
 #linter-inline {
     background: @text-color;
+    padding: 0.25rem;
     .z-depth-2;
 
     &::before {
         border-color: transparent transparent @text-color @text-color;
     }
     linter-message {
-        padding: 0;
+        min-height: 1.85rem;
 
         span:last-child {
             color: @app-background-color;
         }
     }
 }
-atom-text-editor::shadow {
+atom-text-editor, atom-text-editor::shadow {
     .decoration.linter-row {
         .linter-gutter.linter-highlight {
             &.warning {
@@ -99,5 +86,40 @@ atom-text-editor::shadow {
                 background-color: @md-red;
             }
         }
+    }
+}
+linter-new-panel, linter-default-panel {
+    .panel-heading {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+        margin: 0;
+
+        .heading-status {
+            margin: 0;
+        }
+    }
+    .heading-title {
+        line-height: 1.125rem;
+        display: none;
+    }
+    .heading-status {
+        > * {
+            margin-right: 0.5rem;
+        }
+    }
+    .status-success {
+        color: @md-green;
+    }
+    .status-error {
+        color: @md-red;
+    }
+    .status-warning {
+        color: @md-amber;
+    }
+    .panel-contrast & {
+        background: darken(@app-background-color, 2%);
+    }
+    .panel-shadows & {
+        .z-depth-2;
     }
 }

@@ -1,0 +1,25 @@
+'use babel';
+'use strict';
+
+var _this = this;
+
+describe('AMU Font Options', function () {
+    beforeEach(function () {
+        _this.workspace = atom.views.getView(atom.workspace);
+        jasmine.attachToDOM(_this.workspace);
+
+        waitsForPromise('Theme Activation', function () {
+            return atom.packages.activatePackage('atom-material-ui');
+        });
+    });
+
+    it('should be able to scale UI via font-size', function () {
+        atom.config.set('atom-material-ui.fonts.fontSize', '18');
+        expect(atom.config.get('atom-material-ui.fonts.fontSize')).toBe(18);
+
+        atom.config.set('atom-material-ui.fonts.fontSize', '16');
+        expect(atom.config.get('atom-material-ui.fonts.fontSize')).toBe(16);
+    });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9oYWNvLy5kb3RmaWxlcy8uYXRvbS9wYWNrYWdlcy9hdG9tLW1hdGVyaWFsLXVpL3NwZWMvc2V0dGluZ3MtZm9udC1zcGVjLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFdBQVcsQ0FBQztBQUNaLFlBQVksQ0FBQzs7OztBQUViLFFBQVEsQ0FBQyxrQkFBa0IsRUFBRSxZQUFNO0FBQy9CLGNBQVUsQ0FBQyxZQUFNO0FBQ2IsY0FBSyxTQUFTLEdBQUcsSUFBSSxDQUFDLEtBQUssQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDO0FBQ3BELGVBQU8sQ0FBQyxXQUFXLENBQUMsTUFBSyxTQUFTLENBQUMsQ0FBQzs7QUFFcEMsdUJBQWUsQ0FBQyxrQkFBa0IsRUFBRSxZQUFNO0FBQ3RDLG1CQUFPLElBQUksQ0FBQyxRQUFRLENBQUMsZUFBZSxDQUFDLGtCQUFrQixDQUFDLENBQUM7U0FDNUQsQ0FBQyxDQUFDO0tBQ04sQ0FBQyxDQUFDOztBQUVILE1BQUUsQ0FBQywwQ0FBMEMsRUFBRSxZQUFNO0FBQ2pELFlBQUksQ0FBQyxNQUFNLENBQUMsR0FBRyxDQUFDLGlDQUFpQyxFQUFFLElBQUksQ0FBQyxDQUFDO0FBQ3pELGNBQU0sQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLEdBQUcsQ0FBQyxpQ0FBaUMsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLEVBQUUsQ0FBQyxDQUFDOztBQUVwRSxZQUFJLENBQUMsTUFBTSxDQUFDLEdBQUcsQ0FBQyxpQ0FBaUMsRUFBRSxJQUFJLENBQUMsQ0FBQztBQUN6RCxjQUFNLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxHQUFHLENBQUMsaUNBQWlDLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsQ0FBQztLQUN2RSxDQUFDLENBQUM7Q0FDTixDQUFDLENBQUMiLCJmaWxlIjoiL1VzZXJzL2hhY28vLmRvdGZpbGVzLy5hdG9tL3BhY2thZ2VzL2F0b20tbWF0ZXJpYWwtdWkvc3BlYy9zZXR0aW5ncy1mb250LXNwZWMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGJhYmVsJztcbid1c2Ugc3RyaWN0JztcblxuZGVzY3JpYmUoJ0FNVSBGb250IE9wdGlvbnMnLCAoKSA9PiB7XG4gICAgYmVmb3JlRWFjaCgoKSA9PiB7XG4gICAgICAgIHRoaXMud29ya3NwYWNlID0gYXRvbS52aWV3cy5nZXRWaWV3KGF0b20ud29ya3NwYWNlKTtcbiAgICAgICAgamFzbWluZS5hdHRhY2hUb0RPTSh0aGlzLndvcmtzcGFjZSk7XG5cbiAgICAgICAgd2FpdHNGb3JQcm9taXNlKCdUaGVtZSBBY3RpdmF0aW9uJywgKCkgPT4ge1xuICAgICAgICAgICAgcmV0dXJuIGF0b20ucGFja2FnZXMuYWN0aXZhdGVQYWNrYWdlKCdhdG9tLW1hdGVyaWFsLXVpJyk7XG4gICAgICAgIH0pO1xuICAgIH0pO1xuXG4gICAgaXQoJ3Nob3VsZCBiZSBhYmxlIHRvIHNjYWxlIFVJIHZpYSBmb250LXNpemUnLCAoKSA9PiB7XG4gICAgICAgIGF0b20uY29uZmlnLnNldCgnYXRvbS1tYXRlcmlhbC11aS5mb250cy5mb250U2l6ZScsICcxOCcpO1xuICAgICAgICBleHBlY3QoYXRvbS5jb25maWcuZ2V0KCdhdG9tLW1hdGVyaWFsLXVpLmZvbnRzLmZvbnRTaXplJykpLnRvQmUoMTgpO1xuXG4gICAgICAgIGF0b20uY29uZmlnLnNldCgnYXRvbS1tYXRlcmlhbC11aS5mb250cy5mb250U2l6ZScsICcxNicpO1xuICAgICAgICBleHBlY3QoYXRvbS5jb25maWcuZ2V0KCdhdG9tLW1hdGVyaWFsLXVpLmZvbnRzLmZvbnRTaXplJykpLnRvQmUoMTYpO1xuICAgIH0pO1xufSk7XG4iXX0=
+//# sourceURL=/Users/haco/.dotfiles/.atom/packages/atom-material-ui/spec/settings-font-spec.js

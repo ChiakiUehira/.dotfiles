@@ -26,15 +26,14 @@ atom-panel.modal, .overlay {
                     font-size: 0.85rem;
 
                     &::before {
-                        margin-right: 1.5rem;
+                        margin-right: 0.5rem;
                     }
                 }
                 .secondary-line {
                     font-size: 0.75rem;
-                    color: @text-color;
+                    color: fade(@text-color, 40%);
+                    margin-top: 0.25rem;
                     padding: 0;
-                    margin-left: 2.5rem;
-                    opacity: 0.75;
                 }
             }
             .status.icon {
@@ -70,7 +69,13 @@ atom-panel.modal, .overlay {
             color: @text-color-subtle;
         }
     }
-    .error-message, .loading {
+    .error-message, .loading, .message, label {
         padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+        font-weight: normal;
+
+        &::before {
+            margin-right: 0.5rem;
+        }
     }
 }

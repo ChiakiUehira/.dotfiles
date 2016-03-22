@@ -2,7 +2,6 @@
 
 :root {
     font-size: 16px;
-    -webkit-font-smoothing: antialiased;
 }
 * {
     box-sizing: border-box;
@@ -13,21 +12,8 @@ atom-workspace {
     color: @text-color;
     font-size: 0.8rem;
 }
-.scrollbars-visible-always {
-    /deep/::-webkit-scrollbar {
-        width: 0.5rem;
-        height: 0.5rem;
-        z-index: 99999;
-    }
-    /deep/::-webkit-scrollbar-track,
-    /deep/::-webkit-scrollbar-corner {
-        background: transparent;
-    }
-    /deep/::-webkit-scrollbar-thumb {
-        background: @scrollbar-color;
-        border-radius: 0.25rem;
-        border: 1px solid fade(@text-color, 15%);
-    }
+atom-workspace-axis {
+    overflow: hidden;
 }
 background-tips {
     color: fade(@text-color, 30%);
@@ -47,12 +33,8 @@ status-bar {
             display: inline-block;
         }
     }
-}
-.text-warning {
-    color: @md-amber;
-
-    a code, a:hover code {
-        color: darken(@md-amber, 5%);
+    .panel-contrast & {
+        background-color: darken(@app-background-color, 2%);
     }
 }
 kbd {
@@ -70,7 +52,7 @@ kbd {
 }
 
 // Animations Override
-html:not(.use-animations) {
+atom-workspace:not(.use-animations) {
     *, *::before, *::after {
         transition: none !important;
         -webkit-animation-duration: 0s !important;
