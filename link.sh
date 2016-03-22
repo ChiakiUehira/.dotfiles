@@ -6,7 +6,7 @@ ln -sf ~/.dotfiles/.bashrc       ~/.bashrc
 ln -sf ~/.dotfiles/.nanorc       ~/.nanorc
 ln -sf ~/.dotfiles/.gitconfig    ~/.gitconfig
 ln -sf ~/.dotfiles/.gitignore    ~/.gitignore
-
+ln -sf ~/.dotfiles/.shell    ~/.shell
 
 source ~/.bash_profile
 source ~/.bashrc
