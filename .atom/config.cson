@@ -1,10 +1,13 @@
 "*":
+  "atom-beautify":
+    _analyticsUserId: "19f974cd-9fc8-488c-bee5-77d29e379175"
   core:
     themes: [
       "atom-material-ui"
       "atom-material-syntax"
     ]
   editor:
+    fontSize: 18
     invisibles: {}
   "exception-reporting":
     userId: "92e90945-0211-8bdb-faab-9df395609ab4"
