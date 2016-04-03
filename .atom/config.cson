@@ -7,8 +7,10 @@
       "atom-material-syntax"
     ]
   editor:
-    fontSize: 18
+    fontSize: 20
     invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
   "exception-reporting":
     userId: "92e90945-0211-8bdb-faab-9df395609ab4"
   welcome:
