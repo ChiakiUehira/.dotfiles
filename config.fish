@@ -32,4 +32,3 @@ alias dropbox='~/Dropbox'
 alias tmp='~/tmp'
 
 
-alias updatedb='sudo /usr/libexec/locate.updatedb'
