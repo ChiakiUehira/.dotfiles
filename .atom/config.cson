@@ -1,10 +1,12 @@
 "*":
   "atom-beautify":
     _analyticsUserId: "19f974cd-9fc8-488c-bee5-77d29e379175"
+    general:
+      _analyticsUserId: "76cd2b86-1b21-4e40-a067-1cb1b4c31fd4"
   core:
     themes: [
       "atom-material-ui"
-      "atom-material-syntax"
+      "atom-light-syntax"
     ]
   editor:
     fontSize: 20
@@ -13,5 +15,7 @@
     showInvisibles: true
   "exception-reporting":
     userId: "92e90945-0211-8bdb-faab-9df395609ab4"
+  preview:
+    _analyticsUserId: "17f49386-dc15-463a-b087-ff9d5516eec1"
   welcome:
     showOnStartup: false
