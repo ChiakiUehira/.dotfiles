@@ -10,7 +10,7 @@ ln -sf ~/.dotfiles/.shell   	 ~/.shell
 ln -sf ~/.dotfiles/config.fish 	 ~/.config/fish/config.fish
 ln -sf ~/.dotfiles/functions     ~/.config/fish/functions
 ln -sf ~/.dotfiles/.tmux.conf    ~/.tmux.conf
-
+ln -sf ~/.dotfiles/.vimrc	 ~/.vimrc
 source ~/.bash_profile
 source ~/.bashrc
 
