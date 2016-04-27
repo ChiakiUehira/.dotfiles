@@ -1,4 +1,4 @@
 function cd
-     builtin cd $argv;ls;
+     builtin cd $argv;pwd;ls;
 end
 
