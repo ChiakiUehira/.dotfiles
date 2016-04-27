@@ -32,3 +32,4 @@ alias dropbox='~/Dropbox'
 alias tmp='~/tmp'
 
 
+tmux;
