@@ -1,7 +1,10 @@
 .DS_Store
-storage
-packages
-compile-cache
+node-gyp/
+storage/
+packages/
+compile-cache/
+projects.cson
+npm-debug.log
 .apm
 .npm
 .node-gyp
