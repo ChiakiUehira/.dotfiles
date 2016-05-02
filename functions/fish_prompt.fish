@@ -31,7 +31,7 @@ function fish_prompt
   set -g __fish_git_prompt_showuntrackedfiles true
   set -g __fish_git_prompt_showstashstate true
   set -g __fish_git_prompt_show_informative_status true
-  
+
   # Line 1
   echo -n $cyan'┌['$white$USER$cyan'@'$white$__fish_prompt_hostname$cyan']'$white'-'$cyan'('$white(prompt_pwd)$cyan')'
   __fish_git_prompt "-[git://%s]-"
