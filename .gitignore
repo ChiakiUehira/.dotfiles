@@ -5,3 +5,6 @@ compile-cache
 .apm
 .npm
 .node-gyp
+BLOB
+INVKEYS
+MAP
