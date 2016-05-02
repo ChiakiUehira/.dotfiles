@@ -1,0 +1,10 @@
+"*":
+  core:
+    themes: [
+      "atom-material-ui"
+      "one-light-syntax"
+    ]
+  "exception-reporting":
+    userId: "40986cdb-b9df-f5c4-655a-6c499940774a"
+  welcome:
+    showOnStartup: false
