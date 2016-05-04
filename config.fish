@@ -23,7 +23,7 @@ alias sushida='open -a Google\ Chrome http://neutral.x0.com/home/sushida/play2.h
 alias stat='stat -x'
 alias la='ls -a'
 alias ll='ls -l'
-alias ls='ls -a -l'
+alias l='ls -a -l'
 # dir
 
 alias desktop='~/Desktop'
