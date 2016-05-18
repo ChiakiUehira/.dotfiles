@@ -1,10 +1,19 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "0f1e5be5-9b89-44b4-95e7-68d80fe2915d"
   core:
+    disabledPackages: [
+      "wrap-guide"
+      "meteor-api"
+    ]
     themes: [
       "atom-material-ui"
       "one-light-syntax"
     ]
   "exception-reporting":
     userId: "f05c859a-c64c-2169-47ac-dd19ea75f919"
+  processing:
+    "processing-executable": "/usr/local/bin/processing-java"
   welcome:
     showOnStartup: false

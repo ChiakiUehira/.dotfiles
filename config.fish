@@ -24,6 +24,7 @@ alias stat='stat -x'
 alias la='ls -a'
 alias ll='ls -l'
 alias l='ls -a -l'
+
 # dir
 
 alias desktop='~/Desktop'
