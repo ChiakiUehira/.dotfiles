@@ -101,6 +101,10 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,ucs-2le,ucs-2,cp932
+
+
 syntax enable
 set background=dark
 colorscheme solarized
