@@ -1,0 +1,53 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed.
+ *
+ * If you are unfamiliar with LESS, you can read more about it here:
+ * http://www.lesscss.org
+ */
+
+.tree-view {
+    background-color: #ffffff
+}
+
+// style the background and foreground colors on the atom-text-editor-element
+// itself
+atom-text-editor {
+
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow
+// expression
+atom-text-editor::shadow .cursor {
+
+}
+
+.entity.other.attribute-name, .meta.tag.any.html .entity.other.attribute-name.html, .text.html.basic .meta.tag.other.html .entity.other.attribute-name.html {
+    color: #0C7A86;
+}
+
+span.constant.other.rgb-value.css {
+    color: #FB8A87;
+}
+
+.entity.other.attribute-name.id {
+    color: #5185BB;
+}
+
+.source.css .keyword.other.unit, .source.less .keyword.other.unit, .source.scss .keyword.other.unit, .source.sass .keyword.other.unit {
+    color: #9EA1A5;
+}
+
+span.keyword.control.html.elements {
+    color: #5E82B8;
+}
+
+.constant.numeric {
+    color: #FB8A87;
+}
+
+.atom-text-editor .line.highlight-line, :host .line.highlight-line, atom-text-editor .line.highlight-line, atom-text-editor::shadow .line.highlight-line {
+    color: rgba(100, 100, 100, 0.1) !important
+}
