@@ -9,8 +9,10 @@
     ]
     themes: [
       "atom-material-ui"
-      "one-light-syntax"
+      "atom-material-syntax-light"
     ]
+  editor:
+    fontSize: 19
   "exception-reporting":
     userId: "f05c859a-c64c-2169-47ac-dd19ea75f919"
   processing:

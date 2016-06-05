@@ -17,7 +17,7 @@ alias safari='open -a safari'
 alias atom='open -a atom'
 alias chrome='open -a Google\ Chrome'
 alias sushida='open -a Google\ Chrome http://neutral.x0.com/home/sushida/play2.html'
-
+alias github='open -a Google\ Chrome http://github.com/in-the-box'
 # short
 
 alias stat='stat -x'
