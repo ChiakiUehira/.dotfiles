@@ -105,11 +105,6 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,ucs-2le,ucs-2,cp932
 
 
-syntax enable
-set background=dark
-colorscheme solarized
-highlight LineNr ctermfg=red
-
 inoremap <C-q> <Esc>$a
 inoremap <C-q> <Esc>^a
 noremap	 <C-e> <Esc>$a
