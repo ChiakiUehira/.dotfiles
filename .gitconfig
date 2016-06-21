@@ -4,8 +4,8 @@
 	br = branch
 	ci = commit
 [user]
-	name = 
-	email = 
+	name = in-the-box
+	email = hacoco345@gmail.com
 [core]
 	excludesfile = /Users/haco/.gitignore
 [difftool "sourcetree"]
