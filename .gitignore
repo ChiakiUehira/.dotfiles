@@ -1,6 +1,5 @@
 .DS_Store
 node-gyp/
-storage/
 packages/
 compile-cache/
 projects.cson
