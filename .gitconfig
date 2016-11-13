@@ -8,6 +8,7 @@
 	email = hacoco345@gmail.com
 [core]
 	excludesfile = /Users/haco/.gitignore
+	editor = vim -c \"set fenc=utf-8\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
