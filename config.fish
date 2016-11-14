@@ -26,10 +26,6 @@ alias ll='ls -l'
 alias l='ls -a -l -i'
 alias li='ls -i'
 
-# php
-
-alias artisan='php artisan'
-
 # dir
 
 alias desktop='~/Desktop'
