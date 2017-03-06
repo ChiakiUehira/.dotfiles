@@ -8,7 +8,7 @@
 	email = hacoco345@gmail.com
 [core]
 	excludesfile = /Users/haco/.gitignore
-	editor = vim -c \"set fenc=utf-8\"
+	editor = micro
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -19,3 +19,5 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[color]
+	ui = true
