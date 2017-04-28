@@ -1,0 +1,1 @@
+/Users/haco/.config/fisherman/getopts/getopts.fish
