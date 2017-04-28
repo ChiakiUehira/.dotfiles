@@ -8,8 +8,8 @@ set -gx OMF_PATH "~/.local/share/omf"
 source $OMF_PATH/init.fish
 
 # export
-set -gx PATH ~/.nodebrew/current/bin /usr/local/bin /usr/bin /bin /usr/sbin:/sbin ~/.shell
-
+set -gx PATH ~/.nodebrew/current/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin ~/.shell 
+set -gx GOPATH ~/go
 
 # open
 
