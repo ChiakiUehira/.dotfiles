@@ -1,0 +1,23 @@
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+[user]
+	name = in-the-box
+	email = hacoco345@gmail.com
+[core]
+	excludesfile = /Users/haco/.master_gitignore
+	editor = micro
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[color]
+	ui = true
