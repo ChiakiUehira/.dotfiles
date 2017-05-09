@@ -6,3 +6,5 @@ init:
 	ln -sf ~/.dotfiles/vim/.vimrc ~/.vimrc
 	ln -sf ~/.dotfiles/nano/.nanorc ~/.nanorc
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf	
+	ln -sf ~/.dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
+	ln -sf ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish	
