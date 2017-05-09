@@ -1,1 +1,0 @@
-/Users/haco/.config/fisherman/z/functions/__z.fish

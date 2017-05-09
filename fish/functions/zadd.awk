@@ -1,1 +1,1 @@
-/Users/haco/.config/fisherman/z/functions/zadd.awk
+functions/zadd.awk

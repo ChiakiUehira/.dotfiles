@@ -1,1 +1,1 @@
-/Users/haco/.config/fisherman/z/functions/z.awk
+functions/z.awk
