@@ -7,4 +7,5 @@ init:
 	ln -sf ~/.dotfiles/nano/.nanorc ~/.nanorc
 	ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf	
 	ln -sf ~/.dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
-	ln -sf ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish	
+	ln -sf ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
+	ln -sf ~/.dotfiles/fish/fishfile ~/.config/fish/fishfile
