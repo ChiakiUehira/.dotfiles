@@ -1,8 +1,8 @@
 
 init:
 	make link
-	# make homebrew
-	# make -i brew
+	make homebrew
+	make -i brew
 	make fishshell
 	fish
 	make node
