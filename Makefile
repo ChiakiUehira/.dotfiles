@@ -1,12 +1,12 @@
 
 init:
-	make link
 	make homebrew
 	make -i brew
 	make -i fishshell
 	fish
 	make node
-
+	make link
+	
 link:
 	ln -sf ~/.dotfiles/bash/.bashrc ~/.bashrc
 	ln -sf ~/.dotfiles/bash/.bash_profile ~/.bash_profile
@@ -25,8 +25,7 @@ homebrew:
 	rm ./install
 
 brew:
-	brew update
-	brew cleanup
+	make -i brew-opt
 	brew install ettercap
 	brew install gibo
 	brew install git
@@ -47,6 +46,11 @@ brew:
 	brew install wireshark
 	brew install youtube-dl
 	brew install z
+
+brew-opt:
+	brew update
+	brew upgrade
+	brew cleanup
 
 fishshell: 
 	brew install fish
