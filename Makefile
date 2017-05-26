@@ -3,9 +3,10 @@ init:
 	make link
 	make homebrew
 	make -i brew
-	make fishshell
+	make -i fishshell
 	fish
 	make node
+
 link:
 	ln -sf ~/.dotfiles/bash/.bashrc ~/.bashrc
 	ln -sf ~/.dotfiles/bash/.bash_profile ~/.bash_profile
@@ -24,6 +25,8 @@ homebrew:
 	rm ./install
 
 brew:
+	brew update
+	brew cleanup
 	brew install ettercap
 	brew install gibo
 	brew install git
@@ -51,7 +54,7 @@ fishshell:
 	ln -sf ~/.dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
 	ln -sf ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
 	ln -sf ~/.dotfiles/fish/fishfile ~/.config/fish/fishfile
-	fish --command "fisher up"
+	fish --command "fisher install"
 
 node:
 	nodebrew selfupdate
