@@ -11,8 +11,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'tell-k/vim-browsereload-mac'
-plug 'fatih/vim-go'
 Plug 'mattn/emmet-vim'
+plug 'fatih/vim-go'
 
 call plug#end()
 
