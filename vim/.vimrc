@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+plug 'fatih/vim-go'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/unite.vim'
 Plug 'tpope/vim-endwise'
@@ -12,7 +13,6 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'tell-k/vim-browsereload-mac'
 Plug 'mattn/emmet-vim'
-plug 'fatih/vim-go'
 
 call plug#end()
 
