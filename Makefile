@@ -30,7 +30,7 @@ brew:
 	brew install gibo
 	brew install git
 	brew install glide
-	brew install go
+	brew install go --cross-compile-common
 	brew install httpie
 	brew install hub
 	brew install micro

@@ -8,7 +8,7 @@
 	email = hacoco345@gmail.com
 [core]
 	excludesfile = ~/.master_gitignore
-	editor = micro
+	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
