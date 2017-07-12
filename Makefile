@@ -6,6 +6,7 @@ init:
 	fish
 	make node
 	make link
+	make php
 	
 link:
 	ln -sf ~/.dotfiles/bash/.bashrc ~/.bashrc
@@ -64,3 +65,6 @@ node:
 	nodebrew selfupdate
 	nodebrew install-binary stable
 	nodebrew use stable
+
+php:
+	curl -s http://php-osx.liip.ch/install.sh | bash -s 7.1
