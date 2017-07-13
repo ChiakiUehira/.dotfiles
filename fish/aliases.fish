@@ -4,6 +4,8 @@ alias ll='ls -l'
 alias l='ls -a -l -i'
 alias li='ls -i'
 
+alias e='emacs'
+
 alias cl='clear'
 
 alias Desktop='~/Desktop'
