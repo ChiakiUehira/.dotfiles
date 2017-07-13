@@ -13,6 +13,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'tell-k/vim-browsereload-mac'
 Plug 'mattn/emmet-vim'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
