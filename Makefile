@@ -19,6 +19,7 @@ link:
 	ln -sf ~/.dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
 	ln -sf ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
 	ln -sf ~/.dotfiles/fish/fishfile ~/.config/fish/fishfile
+	ln -sf  ~/.dotfiles/fish/functions/* ~/.config/fish/functions/
 
 homebrew:
 	curl -o install -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install
@@ -59,6 +60,7 @@ fishshell:
 	ln -sf ~/.dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
 	ln -sf ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
 	ln -sf ~/.dotfiles/fish/fishfile ~/.config/fish/fishfile
+	ln -sf  ~/.dotfiles/fish/functions/* ~/.config/fish/functions/
 	fish --command "fisher install"
 
 node:
