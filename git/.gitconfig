@@ -4,16 +4,16 @@
 	br = branch
 	ci = commit
 [user]
-	name = in-the-box
-	email = hacoco345@gmail.com
+	name = Chiaki Uehira
+	email = me@uhck.on
 [core]
-	excludesfile = ~/.master_gitignore
+	excludesfile = /Users/haco/.master_gitignore
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "lfs"]
 	clean = git lfs clean %f
@@ -21,3 +21,5 @@
 	required = true
 [color]
 	ui = true
+[hub]
+	protocol = https
