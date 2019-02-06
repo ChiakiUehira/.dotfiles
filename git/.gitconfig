@@ -5,7 +5,7 @@
 	ci = commit
 [user]
 	name = Chiaki Uehira
-	email = me@uhck.on
+	email = me@uhck.in
 [core]
 	excludesfile = /Users/haco/.master_gitignore
 	editor = vim
