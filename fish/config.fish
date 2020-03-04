@@ -15,3 +15,5 @@ source ~/.config/fish/aliases.fish
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/haco/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/haco/google-cloud-sdk/path.fish.inc'; else; . '/Users/haco/google-cloud-sdk/path.fish.inc'; end; end
+set -g fish_user_paths "/usr/local/opt/php@7.2/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/php@7.2/sbin" $fish_user_paths

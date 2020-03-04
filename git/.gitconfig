@@ -5,15 +5,15 @@
 	ci = commit
 [user]
 	name = Chiaki Uehira
-	email = me@uhck.in
+	email = me@uurr.io
 [core]
 	excludesfile = /Users/haco/.master_gitignore
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /private/var/folders/p2/vrdzfj914x5763y0x8hxfz4c0000gn/T/AppTranslocation/34F3E669-A170-4909-B6D5-214E88E65F3B/d/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "lfs"]
 	clean = git lfs clean %f
@@ -23,3 +23,5 @@
 	ui = true
 [hub]
 	protocol = https
+[commit]
+	template = /Users/haco/.stCommitMsg
