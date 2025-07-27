@@ -41,7 +41,7 @@ if [ -d "$HOME/.config/zsh" ]; then
     mv "$HOME/.config/zsh" "$HOME/.config/zsh.backup.$(date +%Y%m%d_%H%M%S)"
     echo "Backed up existing zsh custom config"
 fi
-ln -sf "$DOTFILES_DIR/zsh/custom" "$HOME/.config/zsh"
+ln -sf "$DOTFILES_DIR/zsh" "$HOME/.config/zsh"
 
 # Install neovim configuration
 echo "Installing neovim configuration..."
