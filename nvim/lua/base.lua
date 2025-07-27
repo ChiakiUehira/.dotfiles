@@ -35,9 +35,6 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		if not real_file and not no_name then
 			return
 		end
-
-		-- open the tree, find the file but don't focus it
-		require("nvim-tree.api").tree.toggle({ focus = false, find_file = true })
 	end,
 })
 
@@ -46,3 +43,10 @@ vim.api.nvim_create_autocmd('VimEnter', {
   pattern = '*',
   command = 'hi Normal guibg=NONE ctermbg=NONE'
 })
+
+-- 非推奨API の互換性対応
+if vim.lsp.buf_get_clients == nil then
+  vim.lsp.buf_get_clients = function(bufnr)
+    return vim.lsp.get_clients({ bufnr = bufnr })
+  end
+end

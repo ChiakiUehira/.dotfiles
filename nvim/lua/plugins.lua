@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
@@ -420,10 +420,10 @@ require("lazy").setup({
 	},
 	{
 		"pwntester/octo.nvim",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
-			"kyazdani42/nvim-web-devicons",
+			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
 			require("octo").setup()
@@ -431,7 +431,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("lualine").setup({
 				options = {
@@ -442,7 +442,7 @@ require("lazy").setup({
 	},
 	{
 		"akinsho/bufferline.nvim",
-		requires = "nvim-tree/nvim-web-devicons",
+		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			require("bufferline").setup({
 				options = {
@@ -466,34 +466,12 @@ require("lazy").setup({
 	},
 	{
 		"antosha417/nvim-lsp-file-operations",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-neo-tree/neo-tree.nvim",
+			"nvim-tree/nvim-tree.lua",
 		},
 		config = function()
 			require("lsp-file-operations").setup()
-		end,
-	},
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			local null_ls = require("null-ls")
-			null_ls.setup({
-				sources = {
-					null_ls.builtins.diagnostics.cspell.with({
-						diagnostics_postprocess = function(diagnostic)
-							diagnostic.severity = vim.diagnostic.severity["WARN"]
-						end,
-						condition = function()
-							return vim.fn.executable("cspell") > 0
-						end,
-					}),
-					null_ls.builtins.diagnostics.eslint,
-					null_ls.builtins.code_actions.eslint,
-					null_ls.builtins.formatting.prettier,
-					null_ls.builtins.formatting.stylua,
-				},
-			})
 		end,
 	},
 	{
