@@ -64,5 +64,40 @@ create_symlink "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 echo "SSH config example available at $DOTFILES_DIR/ssh/config.example"
 echo "Please review and copy to ~/.ssh/config if needed"
 
+# Install Homebrew packages
+echo "Installing Homebrew packages..."
+if command -v brew >/dev/null 2>&1; then
+    if [ -f "$DOTFILES_DIR/brew/Brewfile" ]; then
+        cd "$DOTFILES_DIR/brew"
+        brew bundle install
+        echo "Homebrew packages installed from Brewfile"
+    else
+        echo "Warning: Brewfile not found at $DOTFILES_DIR/brew/Brewfile"
+    fi
+else
+    echo "Warning: Homebrew not found. Please install Homebrew first."
+fi
+
+# Install npm global packages
+echo "Installing npm global packages..."
+if command -v npm >/dev/null 2>&1; then
+    if [ -f "$DOTFILES_DIR/npm/package-list.json" ]; then
+        if command -v jq >/dev/null 2>&1; then
+            packages=$(cat "$DOTFILES_DIR/npm/package-list.json" | jq -r '.dependencies | keys[]')
+            for package in $packages; do
+                echo "Installing npm package: $package"
+                npm install -g "$package"
+            done
+            echo "npm global packages installed"
+        else
+            echo "Warning: jq not found. Please install jq to install npm packages automatically."
+        fi
+    else
+        echo "Warning: package-list.json not found at $DOTFILES_DIR/npm/package-list.json"
+    fi
+else
+    echo "Warning: npm not found. Please install Node.js and npm first."
+fi
+
 echo "Dotfiles installation completed!"
 echo "You may need to restart your shell or run 'source ~/.zshrc' to apply changes."

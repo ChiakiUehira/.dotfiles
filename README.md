@@ -9,6 +9,8 @@
 - **Git**: グローバル設定とgitignore
 - **Tmux**: ターミナルマルチプレクサ設定
 - **SSH**: 接続設定の例
+- **Homebrew**: パッケージ管理 (Brewfile)
+- **npm**: グローバルパッケージ管理
 
 ## インストール
 
@@ -24,7 +26,11 @@ cd ~/.dotfiles
 
 ```bash
 cd ~/.dotfiles
-./update.sh
+
+# パッケージリストを更新
+./update-packages.sh
+
+# 変更をコミット
 git add .
 git commit -m "設定を更新"
 git push
@@ -47,7 +53,12 @@ git push
 │   └── .tmux.conf
 ├── ssh/
 │   └── config.example
-└── install.sh
+├── brew/
+│   └── Brewfile
+├── npm/
+│   └── package-list.json
+├── install.sh
+└── update-packages.sh
 ```
 
 ## 注意事項
@@ -55,3 +66,5 @@ git push
 - 既存の設定ファイルは自動的にバックアップされます
 - SSH設定はセキュリティ上の理由でexampleファイルとして保存されています
 - インストール後はシェルの再起動が必要な場合があります
+- Homebrewとnpmが事前にインストールされている必要があります
+- npm package installにはjqが必要です（Brewfileに含まれています）

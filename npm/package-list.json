@@ -1,0 +1,21 @@
+{
+  "name": "lib",
+  "dependencies": {
+    "@anthropic-ai/claude-code": {
+      "version": "1.0.61",
+      "overridden": false
+    },
+    "aicommits": {
+      "version": "1.11.0",
+      "overridden": false
+    },
+    "npm-check-updates": {
+      "version": "16.14.11",
+      "overridden": false
+    },
+    "vercel": {
+      "version": "34.1.7",
+      "overridden": false
+    }
+  }
+}
