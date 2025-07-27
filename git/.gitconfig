@@ -1,0 +1,27 @@
+[core]
+  editor = vim
+[pull]
+	rebase = false
+[user]
+	name = Chiaki Uehira
+	email = me@uurr.io
+[alias]
+  aa = add -A
+  co = checkout
+  cob = checkout -b
+  cm = commit -m
+  cma = commit --amend -m
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+[delta]
+  plus-style = "syntax #012800"
+  minus-style = "syntax #340001"
+  navigate = true
+  line-numbers = true
+  side-by-side = true
+  syntax-theme = Monokai Extended
+[interactive]
+  diffFilter = delta --color-only

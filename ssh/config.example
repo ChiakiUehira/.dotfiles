@@ -1,0 +1,38 @@
+Host *.github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host yellcampus
+  HostName ec2-13-113-52-111.ap-northeast-1.compute.amazonaws.com
+  IdentityFile ~/.ssh/yell-cc.pem
+  User ec2-user
+
+Host yellcampus-production
+  HostName ec2-18-179-244-113.ap-northeast-1.compute.amazonaws.com
+  IdentityFile ~/.ssh/yell-cc.pem
+  User ec2-user
+
+Host yellcampus-staging
+  HostName ec2-54-65-228-215.ap-northeast-1.compute.amazonaws.com
+  IdentityFile ~/.ssh/yell-cc.pem
+  User ec2-user
+
+Host bbq-net
+  HostName ec2-18-177-180-109.ap-northeast-1.compute.amazonaws.com
+  IdentityFile ~/.ssh/urban-earth-bbq.pem
+  User ec2-user
+
+Host urban-earth-bbq
+  HostName ec2-13-113-146-72.ap-northeast-1.compute.amazonaws.com
+  IdentityFile ~/.ssh/urban-earth-bbq.pem
+  User ec2-user
+
+Host arakawa
+  HostName ec2-3-114-122-58.ap-northeast-1.compute.amazonaws.com
+  IdentityFile ~/.ssh/urban-earth-bbq.pem
+  User ec2-user
+
+
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
