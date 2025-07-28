@@ -56,20 +56,51 @@
 - `;c` → コマンド一覧
 - `;p` → プロジェクト一覧
 
+## Git統合
+- `sg` → LazyGitを実行
+- `P` → Push
+- `Space` → Add
+- `c` → Commit
+
 ## GitHub統合（Octo）
 - `;i` → Issue一覧
 - `;a` → 自分にアサインされたIssue
 - `;r` → PR一覧
 - `<Leader> ic` → Issueの作成
 
+### Issue操作（Issueバッファ内）
+- `<space>ca` → アサイン/アサイン解除
+- `<space>cl` → ラベル追加/削除
+- `<space>cc` → コメント作成
+- `<space>co` → Issue/PRを開く/閉じる
+- `<space>cr` → Issueの更新
+- `<space>cs` → 提出
+j
+### PR操作（PRバッファ内）
+- `<space>pm` → マージ可能状態の確認
+- `<space>pp` → PRをマージ
+- `<space>pf` → PRを準備完了にする
+- `<space>pd` → PRをドラフトにする
+- `<space>pr` → レビューをリクエスト
+
+### コメント操作
+- `<space>ca` → コメント追加
+- `<space>cd` → コメント削除
+- `<space>cr` → レビューコメント開始
+
+### その他のコマンド
+- `:Octo issue search` → Issue検索
+- `:Octo pr search` → PR検索
+- `:Octo pr create` → PR作成
+- `:Octo pr checkout` → PRをチェックアウト
+- `:Octo review start` → レビュー開始
+- `:Octo review submit` → レビュー提出
+
 ## ファイルエクスプローラー
 - `sf` → NvimTreeでファイルを見つける
 
 ## Claude Code
 - `sc` → Claude Codeを実行
-
-## Git統合
-- `sg` → LazyGitを実行
 
 ## LSP機能（コード編集時）
 - `gd` → 定義へ移動
