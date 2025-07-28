@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a dotfiles repository for managing personal configuration files and development environment setup. It contains configurations for zsh, Neovim, git, tmux, and SSH.
+This is a dotfiles repository for managing personal configuration files and development environment setup. It contains configurations for zsh, Neovim, git, tmux, ghostty, and SSH.
 
 ## Architecture
 
@@ -14,7 +14,10 @@ This is a dotfiles repository for managing personal configuration files and deve
 ├── nvim/         # Neovim configuration (Lua-based)
 ├── git/          # Git global configuration and gitignore
 ├── tmux/         # Tmux terminal multiplexer configuration
+├── ghostty/      # Ghostty terminal emulator configuration
 ├── ssh/          # SSH configuration (example files)
+├── brew/         # Homebrew package management (Brewfile)
+├── npm/          # npm global package management
 ├── install.sh    # Installation script
 └── README.md     # Documentation
 ```
@@ -24,9 +27,6 @@ This is a dotfiles repository for managing personal configuration files and deve
 ```bash
 # Install all dotfiles
 ./install.sh
-
-# Update dotfiles from current system configuration
-./update.sh
 
 # Test Neovim configuration
 nvim --version
@@ -54,6 +54,7 @@ When you modify your configurations and want to update the dotfiles repository:
 - **Neovim**: Lua-based configuration with lazy.nvim plugin manager
 - **Git**: Includes global gitconfig and comprehensive gitignore
 - **Tmux**: Custom key bindings and status bar configuration
+- **Ghostty**: Terminal emulator configuration with custom theme and font settings
 - **SSH**: Example configuration file (security sensitive)
 
 ## Development Guidelines
@@ -62,3 +63,4 @@ When you modify your configurations and want to update the dotfiles repository:
 - Test configurations in isolated environments first
 - Keep sensitive information (SSH keys, personal tokens) in example files only
 - Update plugin managers and dependencies regularly
+- **After adding Neovim plugins, always update nvim-cheatsheet.md with new keybindings and functionality**

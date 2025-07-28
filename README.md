@@ -8,6 +8,7 @@
 - **Neovim**: Lua設定によるエディタ設定
 - **Git**: グローバル設定とgitignore
 - **Tmux**: ターミナルマルチプレクサ設定
+- **Ghostty**: ターミナルエミュレータ設定
 - **SSH**: 接続設定の例
 - **Homebrew**: パッケージ管理 (Brewfile)
 - **npm**: グローバルパッケージ管理
@@ -51,6 +52,8 @@ git push
 │   └── gitignore_global
 ├── tmux/
 │   └── .tmux.conf
+├── ghostty/
+│   └── config
 ├── ssh/
 │   └── config.example
 ├── brew/

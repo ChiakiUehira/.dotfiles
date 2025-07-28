@@ -20,6 +20,8 @@ keymap("n", "<C-h>", ":HopPattern<Return>", opts)
 
 keymap("n", "sc", ":ClaudeCode <Return>", opts)
 
+keymap("n", "sg", ":LazyGit<Return>", opts)
+
 keymap("n", "<S-h>", "0", opts)
 keymap("v", "<S-h>", "0", opts)
 keymap("n", "<S-l>", "$", opts)
@@ -58,6 +60,12 @@ keymap("n", ";i", ":Octo issue list<Return>", opts)
 keymap("n", ";a", ":Octo issue list assignee=ChiakiUehira<Return>", opts)
 keymap("n", ";r", ":Octo pr list<Return>", opts)
 
+keymap("n", "<Leader>ic", ":Octo issue create<Return>", opts)
+
+-- Cheatsheet shortcuts
+keymap("n", ";n", ":e ~/.dotfiles/nvim-cheatsheet.md<Return>", opts)
+keymap("n", ";t", ":e ~/.dotfiles/tmux-cheatsheet.md<Return>", opts)
+
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
@@ -66,27 +74,26 @@ keymap("n", "dp", ":lua vim.diagnostic.goto_prev()<Return>", opts)
 keymap("n", "dn", ":lua vim.diagnostic.goto_next()<Return>", opts)
 
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-	callback = function(ev)
-		-- Enable completion triggered by <c-x><c-o>
-		vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-		local opts = { noremap = true, silent = true, buffer = ev.buf }
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-		vim.keymap.set("n", "<C-l>", vim.lsp.buf.hover, opts)
-		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-		vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
-		vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
-		vim.keymap.set("n", "<space>wl", function()
-			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, opts)
-		vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
-		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-		vim.keymap.set("n", "<space>c", vim.lsp.buf.code_action, opts)
-		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-		vim.keymap.set("n", "<space>f", function()
-			vim.lsp.buf.format({ async = true })
-		end, opts)
-	end,
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+    local opts = { noremap = true, silent = true, buffer = ev.buf }
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "<C-l>", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set("n", "<space>wl", function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<space>c", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<space>f", function()
+      vim.lsp.buf.format({ async = true })
+    end, opts)
+  end,
 })
-

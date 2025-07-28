@@ -60,6 +60,15 @@ create_symlink "$DOTFILES_DIR/git/gitignore_global" "$HOME/.gitignore"
 echo "Installing tmux configuration..."
 create_symlink "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
+# Install ghostty configuration
+echo "Installing ghostty configuration..."
+if [ -d "$HOME/.config/ghostty" ]; then
+    mv "$HOME/.config/ghostty" "$HOME/.config/ghostty.backup.$(date +%Y%m%d_%H%M%S)"
+    echo "Backed up existing ghostty config"
+fi
+mkdir -p "$HOME/.config"
+ln -sf "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
+
 # SSH config (example file)
 echo "SSH config example available at $DOTFILES_DIR/ssh/config.example"
 echo "Please review and copy to ~/.ssh/config if needed"
