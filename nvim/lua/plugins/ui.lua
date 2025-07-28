@@ -72,4 +72,15 @@ return {
 			require("hlchunk").setup({})
 		end,
 	},
+  -- 空白インデントライン: 空白文字のインデントを視覚的に表示
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+    config = function()
+      require("ibl").setup()
+    end,
+  }
 }

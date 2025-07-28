@@ -39,7 +39,7 @@ keymap("n", "sk", "<C-w>k<Return>", opts)
 
 keymap("n", "<C-p>", ":bprevious<Return>", opts)
 keymap("n", "<C-n>", ":bnext<Return>", opts)
-keymap("n", "<C-w>", ":bd<Return>", opts)
+keymap("n", "<C-x>", "::Bdelete<Return>", opts)
 keymap("n", "<C-q>", ":q<Return>", opts)
 
 keymap("n", "x", '"_x', opts)

@@ -148,4 +148,8 @@ return {
 			require("octo").setup()
 		end,
 	},
+  -- バッファ削除: バッファを安全に削除するためのプラグイン
+  {
+    "famiu/bufdelete.nvim"
+  }
 }
