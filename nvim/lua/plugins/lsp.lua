@@ -142,6 +142,18 @@ return {
 	-- LSP設定: 各言語のLSPサーバーとの通信設定
 	{
 		"neovim/nvim-lspconfig",
+		config = function()
+			-- LSP診断設定: エラー、警告、情報、ヒントの表示設定
+			vim.diagnostic.config({
+				virtual_text = true,
+				signs = true,
+				underline = true,
+				update_in_insert = false,
+				severity_sort = true,
+			})
+			-- 一般的なLSPサーバーの設定
+      require('cmp_nvim_lsp').default_capabilities()
+		end,
 	},
 	-- LSPサーバーマネージャー: LSPサーバー、DAP、リンター、フォーマッターのインストール管理
   {
@@ -165,13 +177,6 @@ return {
 		},
 		config = function()
 			require("lsp-file-operations").setup()
-		end,
-	},
-	-- Prettierフォーマッター: コードフォーマット支援
-	{
-		"MunifTanjim/prettier.nvim",
-		config = function()
-			require("prettier").setup()
 		end,
 	},
 }

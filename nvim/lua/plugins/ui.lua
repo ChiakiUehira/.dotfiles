@@ -64,14 +64,6 @@ return {
 			require("scrollbar").setup()
 		end,
 	},
-	-- インデントハイライト: インデントレベルと括弧の対応をハイライト表示
-	{
-		"shellRaining/hlchunk.nvim",
-		event = { "UIEnter" },
-		config = function()
-			require("hlchunk").setup({})
-		end,
-	},
   -- 空白インデントライン: 空白文字のインデントを視覚的に表示
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -80,7 +72,9 @@ return {
     ---@type ibl.config
     opts = {},
     config = function()
-      require("ibl").setup()
+      require("ibl").setup({
+        scope = { enabled = false },
+      })
     end,
   }
 }

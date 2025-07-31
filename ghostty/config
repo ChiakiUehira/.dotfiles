@@ -14,8 +14,8 @@ copy-on-select = "clipboard"
 cursor-style = "block"
 
 window-save-state = always
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 30
+window-padding-y = 30
 
 confirm-close-surface = false
 
