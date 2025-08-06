@@ -71,7 +71,6 @@ export ZSH_CUSTOM="$HOME/.config/zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   z
   copypath
   copyfile
@@ -101,3 +100,4 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
       tmux attach-session -t local || tmux new-session -s local
   fi
 fi
+. "/Users/chiakiuehira/.deno/env"

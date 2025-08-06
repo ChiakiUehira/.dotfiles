@@ -28,10 +28,14 @@ return {
       require("nvim-ts-autotag").setup()
     end,
   },
-  -- Treesitterテキストオブジェクト: 関数、クラス、ブロックなどの選択と操作
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-  },
+  -- -- Treesitterテキストオブジェクト: 関数、クラス、ブロックなどの選択と操作
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-textobjects",
+  --   after = "nvim-treesitter",
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --   }
+  -- },
   -- シンタックスハイライト: 高性能なシンタックスハイライトとコード解析
   {
     "nvim-treesitter/nvim-treesitter",
@@ -80,16 +84,38 @@ return {
   },
   -- Claude Code連携: Claude CodeとNeovimの連携機能
   {
-    "greggh/claude-code.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
+    "coder/claudecode.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    config = true,
+    keys = {
+      { "<leader>a",  nil,                              desc = "AI/Claude Code" },
+      { "<leader>ac", "<cmd>ClaudeCode<cr>",            desc = "Toggle Claude" },
+      { "<leader>af", "<cmd>ClaudeCodeFocus<cr>",       desc = "Focus Claude" },
+      { "<leader>ar", "<cmd>ClaudeCode --resume<cr>",   desc = "Resume Claude" },
+      { "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
+      { "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
+      { "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>",       desc = "Add current buffer" },
+      { "<leader>as", "<cmd>ClaudeCodeSend<cr>",        mode = "v",                  desc = "Send to Claude" },
+      {
+        "<leader>as",
+        "<cmd>ClaudeCodeTreeAdd<cr>",
+        desc = "Add file",
+        ft = { "NvimTree", "neo-tree", "oil" },
+      },
     },
-    config = function()
-      require("claude-code").setup({
-        window = {
-          position = "botright"
-        }
-      })
-    end,
+    opts = {
+      terminal = {
+        provider = "snack",
+        auto_close = true,
+        ---@module "snacks"
+        ---@type snacks.win.Config|{}
+        snacks_win_opts = {
+          position = "bottom",
+          height = 0.25,
+          width = 1.0,
+          border = "single",
+        },
+      },
+    },
   }
 }
