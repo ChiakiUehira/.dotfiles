@@ -82,6 +82,14 @@ return {
     "mattn/emmet-vim",
     lazy = true,
   },
+  {
+    "ChiakiUehira/codex.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    config = function()
+      require("codex").setup({
+      })
+    end,
+  },
   -- Claude Code連携: Claude CodeとNeovimの連携機能
   {
     "coder/claudecode.nvim",

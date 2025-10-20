@@ -90,14 +90,20 @@ else
 fi
 
 # tmux自動起動設定
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  # SSH接続時のみ、またはローカルでも起動したい場合の条件分岐
-  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-      # SSH接続時は必ずtmuxを起動
-      tmux attach-session -t ssh || tmux new-session -s ssh
+if [[ $- == *i* ]] && command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
+  if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+    session_prefix="ssh-$(hostname)"
   else
-      # ローカルでも起動したい場合（オプション）
-      tmux attach-session -t local || tmux new-session -s local
+    session_prefix="local"
   fi
+  session_name="${session_prefix}-$(date +%Y%m%d-%H%M%S)"
+  tmux -u new-session -s "$session_name"
+  unset session_prefix session_name
 fi
+
 . "/Users/chiakiuehira/.deno/env"
+
+eval "$(pyenv init -)"
+
+export LANG="ja_JP.UTF-8"
+export LC_ALL=ja_JP.UTF-8""
