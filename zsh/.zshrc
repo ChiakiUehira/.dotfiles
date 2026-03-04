@@ -89,10 +89,10 @@ else
   export EDITOR='nvim'
 fi
 
-# tmux自動起動設定（mainセッションに接続、なければ作成）
-if [[ $- == *i* ]] && command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
-  tmux -u new-session -A -s main && exit
-fi
+# tmux自動起動設定（無効化：Ghosttyのタブ/スプリット機能を使用）
+# if [[ $- == *i* ]] && command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
+#   tmux -u new-session -A -s main && exit
+# fi
 
 . "/Users/chiakiuehira/.deno/env"
 
