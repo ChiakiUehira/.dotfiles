@@ -8,6 +8,22 @@ DOTFILES_DIR="$HOME/.dotfiles"
 
 echo "Starting dotfiles installation..."
 
+# Install Oh My Zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Installing Oh My Zsh..."
+    RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "Oh My Zsh already installed"
+fi
+
+# Install Deno
+if ! command -v deno >/dev/null 2>&1; then
+    echo "Installing Deno..."
+    curl -fsSL https://deno.land/install.sh | sh
+else
+    echo "Deno already installed"
+fi
+
 # Backup existing files
 backup_file() {
     if [ -f "$1" ] || [ -L "$1" ]; then
