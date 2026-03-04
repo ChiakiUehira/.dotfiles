@@ -89,6 +89,14 @@ ln -sf "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
 echo "SSH config example available at $DOTFILES_DIR/ssh/config.example"
 echo "Please review and copy to ~/.ssh/config if needed"
 
+# Install TPM (tmux plugin manager)
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    echo "Installing TPM..."
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+    echo "TPM already installed"
+fi
+
 # Install Homebrew packages
 echo "Installing Homebrew packages..."
 if command -v brew >/dev/null 2>&1; then
