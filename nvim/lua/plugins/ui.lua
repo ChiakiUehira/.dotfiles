@@ -76,5 +76,34 @@ return {
         scope = { enabled = false },
       })
     end,
-  }
+  },
+  -- Markdownレンダリング: Markdownファイルを見出し・リスト・テーブル等を装飾して表示
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    ft = { "markdown" },
+    opts = {
+      heading = {
+        icons = {},
+        sign = false,
+        backgrounds = {},
+      },
+      code = {
+        sign = false,
+        language = false,
+        disable_background = true,
+        border = "none",
+        width = "block",
+      },
+      bullet = {
+        enabled = false,
+      },
+      dash = {
+        enabled = false,
+      },
+      checkbox = {
+        enabled = false,
+      },
+    },
+  },
 }

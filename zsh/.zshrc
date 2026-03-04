@@ -38,7 +38,7 @@ zstyle ':omz:update' frequency 13
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -89,16 +89,9 @@ else
   export EDITOR='nvim'
 fi
 
-# tmux自動起動設定
+# tmux自動起動設定（mainセッションに接続、なければ作成）
 if [[ $- == *i* ]] && command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
-  if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
-    session_prefix="ssh-$(hostname)"
-  else
-    session_prefix="local"
-  fi
-  session_name="${session_prefix}-$(date +%Y%m%d-%H%M%S)"
-  tmux -u new-session -s "$session_name"
-  unset session_prefix session_name
+  tmux -u new-session -A -s main && exit
 fi
 
 . "/Users/chiakiuehira/.deno/env"
@@ -106,4 +99,15 @@ fi
 eval "$(pyenv init -)"
 
 export LANG="ja_JP.UTF-8"
-export LC_ALL=ja_JP.UTF-8""
+export LC_ALL="ja_JP.UTF-8"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/Users/chiakiuehira/.bun/_bun" ] && source "/Users/chiakiuehira/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
