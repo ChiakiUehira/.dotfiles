@@ -82,6 +82,13 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# プロンプトにホスト名を表示（SSH時は色を変える）
+if [[ -n $SSH_CONNECTION ]]; then
+  PROMPT="%{$fg[yellow]%}%m%{$reset_color%} $PROMPT"
+else
+  PROMPT="%{$fg[green]%}%m%{$reset_color%} $PROMPT"
+fi
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'

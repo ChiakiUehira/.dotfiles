@@ -1,6 +1,6 @@
-theme = GruvboxDarkHard
+theme = Gruvbox Dark Hard
 macos-titlebar-proxy-icon = hidden
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
 
 font-size = 11
 font-family = JetBrainsMonoNL Nerd Font Mono
@@ -14,8 +14,11 @@ copy-on-select = "clipboard"
 cursor-style = "block"
 
 window-save-state = always
-window-padding-x = 30
-window-padding-y = 30
+window-padding-x = 10
+window-padding-y = 10
 
 confirm-close-surface = false
+
+keybind = super+t=new_tab
+
 
