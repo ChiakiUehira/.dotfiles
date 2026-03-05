@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(bun lint:*)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Bash(bun run:*)",
+      "Bash(git status:*)",
+      "Bash(git push:*)",
+      "Bash(bun format:*)",
+      "Bash(bunx prisma migrate dev:*)",
+      "Bash(bunx prisma generate:*)",
+      "Bash(gh issue view:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(rm -r *)",
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)",
+      "Bash(git checkout . *)",
+      "Bash(git clean -f *)"
+    ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notify-sound.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-notify-status.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/complete-sound.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-status.sh clear",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "curl -s -X POST https://api.getmoshi.app/api/webhook -H 'Content-Type: application/json' -d '{\"token\": \"EbI9oAWn3eHcnU8AK4w6aYAL8OMGEE1k\", \"title\": \"Done\", \"message\": \"Task completed\"}'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-status.sh set 作業中",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/tmux-status.sh set 待機中",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "language": "Japanese",
+  "spinnerTipsEnabled": false,
+  "skipDangerousModePermissionPrompt": true,
+  "defaultMode": "bypassPermissions",
+  "teammateMode": "in-process",
+  "effortLevel": "high"
+}

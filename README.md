@@ -12,6 +12,7 @@
 - **SSH**: 接続設定の例
 - **Homebrew**: パッケージ管理 (Brewfile)
 - **npm**: グローバルパッケージ管理
+- **Claude Code**: グローバル設定、hooks、カスタムスキル
 
 ## インストール
 
@@ -60,6 +61,13 @@ git push
 │   └── Brewfile
 ├── npm/
 │   └── package-list.json
+├── claude/
+│   ├── CLAUDE.md
+│   ├── settings.json
+│   ├── settings.local.json
+│   ├── statusline-command.sh
+│   ├── hooks/
+│   └── skills/
 ├── install.sh
 └── update-packages.sh
 ```

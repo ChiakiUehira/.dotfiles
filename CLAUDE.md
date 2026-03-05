@@ -15,6 +15,7 @@ This is a dotfiles repository for managing personal configuration files and deve
 ├── git/          # Git global configuration and gitignore
 ├── tmux/         # Tmux terminal multiplexer configuration
 ├── ghostty/      # Ghostty terminal emulator configuration
+├── claude/        # Claude Code configuration
 ├── ssh/          # SSH configuration (example files)
 ├── brew/         # Homebrew package management (Brewfile)
 ├── npm/          # npm global package management
@@ -55,6 +56,7 @@ When you modify your configurations and want to update the dotfiles repository:
 - **Git**: Includes global gitconfig and comprehensive gitignore
 - **Tmux**: Custom key bindings and status bar configuration
 - **Ghostty**: Terminal emulator configuration with custom theme and font settings
+- **Claude Code**: Global settings, hooks, statusline, and custom skills
 - **SSH**: Example configuration file (security sensitive)
 
 ## Development Guidelines

@@ -89,6 +89,22 @@ ln -sf "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
 echo "SSH config example available at $DOTFILES_DIR/ssh/config.example"
 echo "Please review and copy to ~/.ssh/config if needed"
 
+# Install Claude Code configuration
+echo "Installing Claude Code configuration..."
+mkdir -p "$HOME/.claude/hooks" "$HOME/.claude/skills"
+create_symlink "$DOTFILES_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+create_symlink "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
+create_symlink "$DOTFILES_DIR/claude/settings.local.json" "$HOME/.claude/settings.local.json"
+create_symlink "$DOTFILES_DIR/claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
+for hook in "$DOTFILES_DIR/claude/hooks/"*.sh; do
+    create_symlink "$hook" "$HOME/.claude/hooks/$(basename "$hook")"
+done
+for skill_dir in "$DOTFILES_DIR/claude/skills/"*/; do
+    skill_name=$(basename "$skill_dir")
+    mkdir -p "$HOME/.claude/skills/$skill_name"
+    create_symlink "$skill_dir/SKILL.md" "$HOME/.claude/skills/$skill_name/SKILL.md"
+done
+
 # Install TPM (tmux plugin manager)
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     echo "Installing TPM..."
